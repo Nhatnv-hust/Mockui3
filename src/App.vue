@@ -26,13 +26,20 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+  font-family: NotoSansJP;
+  src: url(../src/assets/NotoSansJP-Regular.otf);
+
+   font-family: NotoSans;
+  src: url(../src/assets/NotoSansJP-Bold.otf);
+}
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 #app {
-  font-family: 'Noto Sans';
+  font-family: 'NotoSansJP';
   font-size: 12px;
   font-weight: 400;
 }

@@ -59,10 +59,11 @@ $background-color: #ffffff;
   justify-content: space-between;
   align-items: center;
   height: 64px;
-  position: absolute;
-  z-index: 1;
+  position: fixed;
+  z-index: 10;
   margin: 12px 0px;
   box-shadow: 0px 1px 1px $primary-color;
+  background-color:#ffffff ;
 }
 .navigations__search {
   display: flex;
@@ -71,6 +72,7 @@ $background-color: #ffffff;
 
   img {
     margin: 0px 12px;
+    cursor: pointer;
   }
   .navigation__search__main {
     width: 320px;
@@ -79,6 +81,7 @@ $background-color: #ffffff;
 
     i {
       margin: 11px 13px;
+      cursor: pointer;
     }
     input {
       width: 80%;
@@ -92,17 +95,23 @@ $background-color: #ffffff;
   display: flex;
   justify-content: start;
   align-items: center;
+   cursor: pointer;
   .navigations__profiles__info {
     margin-right: 16px;
   }
   .navigations__profiles__company {
     margin: 0px 24px;
   }
-  .border {
-    height: 90%;
-    width: 5px;
+  .navigations__profiles__company::after {
+    position: absolute;
+    content: "";
+    width: 1px;
     background-color: #dcdcdc;
+    top: 0;
+    left: 0;
+    height: 90%;
   }
+
   .navigations__profiles__name {
     margin-left: 24px;
     margin-right: 6px;
@@ -113,5 +122,25 @@ $background-color: #ffffff;
       border-radius: 20px;
     }
   }
+}
+@media screen and (max-width:844px){
+ .navigations__profiles__info,
+ .navigations__profiles__tag{
+     display:none;
+  }
+
+}
+@media screen and (max-width:767px){
+.navigation__search__main{
+   display:none;
+}
+
+}
+@media screen and (max-width:414px){
+.navigations__profiles__company,
+.navigations__profiles__name{
+   display:none;
+}
+
 }
 </style>

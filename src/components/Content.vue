@@ -200,6 +200,7 @@ $font-stack: "Roboto", sans-serif;
 $primary-color: #f5f5f5;
 $background-color: #ffffff;
 
+
 * {
   padding: 0;
   margin: 0;
@@ -263,13 +264,13 @@ $background-color: #ffffff;
     line-height: 30px;
     height: 24px;
     margin-top: 40px;
+    color:#333333;
   }
 }
 .content__content__column {
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 24px;
-  font-family: "Roboto", sans-serif;
   .content__content__item {
     border: 1px solid #f5f5f5;
     border-radius: 8px;
@@ -298,5 +299,30 @@ $background-color: #ffffff;
   padding: 16px;
   font-weight: 400;
   font-size: 12px;
+  color:#666666;
 }
+@media screen and (max-width:1024px){
+  .content__container{
+     display:none;
+  }
+
+}
+@media screen and (max-width:844px){
+.content__content__column {
+  display: grid;
+  grid-template-columns: auto auto ;
+  gap: 24px;
+}
+
+}
+@media screen and (max-width:768px){
+.content__content__column {
+  display: grid;
+  grid-template-columns: auto ;
+}
+.content__content{
+  margin: 10px 50px;
+}
+}
+  
 </style>
