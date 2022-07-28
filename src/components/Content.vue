@@ -264,7 +264,6 @@ $background-color: #ffffff;
   }
 }
 .content__selected {
-  
   width: 100%;
   cursor: pointer;
 }
@@ -281,7 +280,7 @@ $background-color: #ffffff;
   position: relative;
   width: 100%;
   align-items: center;
-  margin: 10px 100px;
+  margin: 10px 100px 50px;
 
   .content__content__title {
     margin-bottom: 24px;
@@ -346,7 +345,7 @@ $background-color: #ffffff;
     grid-template-columns: auto;
   }
   .content__content {
-    margin: 10px 50px;
+     margin: 10px 50px 100px
   }
 }
 </style>
