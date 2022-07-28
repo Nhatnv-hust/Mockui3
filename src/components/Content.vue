@@ -10,12 +10,24 @@
           <div class="content__tree__search__name">{{ this.nameSelected }}</div>
           <div class="content__tree__search__select">
             <div class="content__selected">
-              <img src="../assets/carvet.svg" alt="" />
-              <p></p>
+              <img src="../assets/carvet.svg" alt="" @click="show1 = !show1" />
+              <div
+                class="conten__seleted"
+                v-for="select in contents"
+                :key="select.id"
+              >
+                <p v-if="show1">{{ select.label }}</p>
+              </div>
             </div>
             <div class="content__selected">
-              <img src="../assets/carvet.svg" alt="" />
-              <p></p>
+              <img src="../assets/carvet.svg" alt="" @click="show2 = !show2" />
+              <div
+                class="conten__seleted"
+                v-for="select in contents2"
+                :key="select.id"
+              >
+                <p v-if="show2">{{ select.label }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -74,6 +86,8 @@ export default {
       nameSelected: "PEOPLE",
       nameTitle1: "PEOPLE設定一覧",
       nameTitle2: "マスタ・ラベル管理",
+      show1: false,
+      show2: false,
       contents: [
         {
           id: 1,
@@ -200,7 +214,6 @@ $font-stack: "Roboto", sans-serif;
 $primary-color: #f5f5f5;
 $background-color: #ffffff;
 
-
 * {
   padding: 0;
   margin: 0;
@@ -250,6 +263,19 @@ $background-color: #ffffff;
     }
   }
 }
+.content__selected {
+  
+  width: 100%;
+  cursor: pointer;
+}
+.content__selected p {
+  height: 30px;
+  padding: 8px;
+  cursor: pointer;
+}
+.content__selected p:hover {
+  background-color: #abb8c9;
+}
 .content__content {
   top: 64px;
   position: relative;
@@ -264,7 +290,7 @@ $background-color: #ffffff;
     line-height: 30px;
     height: 24px;
     margin-top: 40px;
-    color:#333333;
+    color: #333333;
   }
 }
 .content__content__column {
@@ -299,30 +325,28 @@ $background-color: #ffffff;
   padding: 16px;
   font-weight: 400;
   font-size: 12px;
-  color:#666666;
+  color: #666666;
+  word-break: break-all;
 }
-@media screen and (max-width:1024px){
-  .content__container{
-     display:none;
+@media screen and (max-width: 1024px) {
+  .content__container {
+    display: none;
   }
-
 }
-@media screen and (max-width:844px){
-.content__content__column {
-  display: grid;
-  grid-template-columns: auto auto ;
-  gap: 24px;
+@media screen and (max-width: 844px) {
+  .content__content__column {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 24px;
+  }
 }
-
+@media screen and (max-width: 768px) {
+  .content__content__column {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .content__content {
+    margin: 10px 50px;
+  }
 }
-@media screen and (max-width:768px){
-.content__content__column {
-  display: grid;
-  grid-template-columns: auto ;
-}
-.content__content{
-  margin: 10px 50px;
-}
-}
-  
 </style>

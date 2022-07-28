@@ -2,9 +2,11 @@
   <div class="navigations__container">
     <div class="navigations__search">
       <img :src="imgLogo" alt="" />
-      <div class="navigation__search__main">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" :placeholder="this.search.placehoder" />
+      <div class="navigations__search__do">
+        <div class="navigation__search__main">
+          <img src="../assets/search.svg" alt="" />
+          <input type="text" :placeholder="this.search.placehoder" />
+        </div>
       </div>
     </div>
     <div class="navigations__profiles">
@@ -63,7 +65,7 @@ $background-color: #ffffff;
   z-index: 10;
   margin: 12px 0px;
   box-shadow: 0px 1px 1px $primary-color;
-  background-color:#ffffff ;
+  background-color: #ffffff;
 }
 .navigations__search {
   display: flex;
@@ -75,12 +77,14 @@ $background-color: #ffffff;
     cursor: pointer;
   }
   .navigation__search__main {
+    display: flex;
+    align-items: center;
     width: 320px;
+    height: 40px;
     background-color: #f4f7fb;
     border-radius: 27px;
 
-    i {
-      margin: 11px 13px;
+    img {
       cursor: pointer;
     }
     input {
@@ -95,7 +99,7 @@ $background-color: #ffffff;
   display: flex;
   justify-content: start;
   align-items: center;
-   cursor: pointer;
+  cursor: pointer;
   .navigations__profiles__info {
     margin-right: 16px;
   }
@@ -105,11 +109,11 @@ $background-color: #ffffff;
   .navigations__profiles__company::after {
     position: absolute;
     content: "";
-    width: 1px;
     background-color: #dcdcdc;
-    top: 0;
-    left: 0;
-    height: 90%;
+    top: 6px;
+    height: 80%;
+    margin-left: 24px;
+    padding-right: 1px;
   }
 
   .navigations__profiles__name {
@@ -123,24 +127,21 @@ $background-color: #ffffff;
     }
   }
 }
-@media screen and (max-width:844px){
- .navigations__profiles__info,
- .navigations__profiles__tag{
-     display:none;
+@media screen and (max-width: 844px) {
+  .navigations__profiles__info,
+  .navigations__profiles__tag {
+    display: none;
   }
-
 }
-@media screen and (max-width:767px){
-.navigation__search__main{
-   display:none;
+@media screen and (max-width: 767px) {
+  .navigations__search__do {
+    display: none;
+  }
 }
-
-}
-@media screen and (max-width:414px){
-.navigations__profiles__company,
-.navigations__profiles__name{
-   display:none;
-}
-
+@media screen and (max-width: 414px) {
+  .navigations__profiles__company,
+  .navigations__profiles__name {
+    display: none;
+  }
 }
 </style>

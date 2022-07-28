@@ -1,55 +1,48 @@
 <template>
   <div id="app">
-    <Navigations/>
+    <Navigations />
     <div class="app__routerview">
-      <SideBar/>
-      <Content class="app__content"/>
+      <SideBar />
+      <Content class="app__content" />
     </div>
   </div>
 </template>
 
 <script>
-import Navigations from './components/Navigations.vue';
-import SideBar from './components/SideBar.vue';
-import Content from './components/Content.vue';
-
-
+import Navigations from "./components/Navigations.vue";
+import SideBar from "./components/SideBar.vue";
+import Content from "./components/Content.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Navigations,
     SideBar,
-    Content
-}
-}
+    Content,
+  },
+};
 </script>
 
 <style scoped>
 @font-face {
-  font-family: NotoSansJP;
-  src: url(../src/assets/NotoSansJP-Regular.otf);
-
-   font-family: NotoSans;
+  font-family: NotoSans;
   src: url(../src/assets/NotoSansJP-Bold.otf);
 }
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 #app {
-  font-family: 'NotoSansJP';
+  font-family: "NotoSansJP";
   font-size: 12px;
   font-weight: 400;
 }
-.app__routerview{
+.app__routerview {
   display: flex;
   justify-content: start;
-
-
 }
-.app__content{
+.app__content {
   width: 100%;
 }
 </style>
